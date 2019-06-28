@@ -15,6 +15,7 @@ namespace Game.Actor.Money
         private void Awake()
         {
             components.Add(new AddMoney());
+            components.Add(new AddProfit());
             datas.Add(new MoneyData());
         }
 

@@ -25,10 +25,10 @@ namespace Game.Components
 
         public void StartGame()
         {
-            PublisherAndSubscriber.Subscribe<MoneyMessage>(SetText);
+            PublisherAndSubscriber.Subscribe<T>(SetText);
         }
 
-        private void SetText(MoneyMessage message)
+        private void SetText(T message)
         {
             text.text = message.ToString();
         }
