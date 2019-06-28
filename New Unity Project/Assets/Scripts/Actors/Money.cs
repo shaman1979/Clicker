@@ -20,7 +20,7 @@ namespace Game.Actor.Money
 
         public void Tick(float time)
         {
-            
+
         }
     }
 }
