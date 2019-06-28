@@ -1,6 +1,8 @@
 ﻿
 using Game.Datas;
+using Game.Messages;
 using Game.System.FakeMono;
+using Game.System.Manager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +17,7 @@ namespace Game.Components
         public void Add(MoneyData data)
         {
             data.Money += data.Profit;
-            Debug.Log(data.Money.ToString());
+            PublisherAndSubscriber.Publish<MoneyMessage>(new MoneyMessage(data.Money));
         }
 
         public bool GetData(IData data)
