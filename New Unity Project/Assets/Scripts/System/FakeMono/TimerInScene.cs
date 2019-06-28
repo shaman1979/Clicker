@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Game.System.FakeMono
 {
-    public class IEnumeratorScene : MonoBehaviour
+    public class TimerInScene : MonoBehaviour
     {
         TimerManager manager;
 
         public void Setup(TimerManager manager)
         {
             this.manager = manager;
-
+            StartCoroutine(StartTimer());
         }
 
         public IEnumerator StartTimer()

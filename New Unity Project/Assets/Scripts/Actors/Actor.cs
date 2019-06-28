@@ -32,6 +32,9 @@ namespace Game.Actor
 
                 if (component is ITick)
                     UpdateManager.AddTick(component as ITick);
+
+                if (component is ITimer)
+                    TimerManager.Add((component as ITimer).Timer);
             }
         }
     }

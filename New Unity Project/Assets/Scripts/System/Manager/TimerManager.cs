@@ -22,7 +22,7 @@ namespace Game.System.Manager
         private void CreatingTimerInScene()
         {
             GameObject update = new GameObject("TimerScene");
-            update.AddComponent<IEnumeratorScene>().Setup(Toolbox.Get<TimerManager>());
+            update.AddComponent<TimerInScene>().Setup(Toolbox.Get<TimerManager>());
             Debug.Log("Создание портативного Timer на сцене");
         }
 

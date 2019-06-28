@@ -11,18 +11,18 @@ using UnityEngine;
 
 namespace Game.Components
 {
-    public class AddMoney : IComponent<MoneyData>, ITick
+    public class AddMoney : IComponent<MoneyData>, ITimer
     {
-        private MoneyData Data; 
+        private MoneyData Data;
         public void Add(MoneyData data)
         {
             data.Money += data.Profit;
-            PublisherAndSubscriber.Publish<MoneyMessage>(new MoneyMessage(data.Money));
+            PublisherAndSubscriber.Publish(new MoneyMessage(data.Money));
         }
 
         public bool GetData(IData data)
         {
-            if(data.GetType() == typeof(MoneyData))
+            if (data.GetType() == typeof(MoneyData))
             {
                 Data = data as MoneyData;
                 return true;
@@ -35,7 +35,7 @@ namespace Game.Components
             Data = action;
         }
 
-        public void Tick(float time)
+        public void Timer()
         {
             if (Data == null)
                 return;
