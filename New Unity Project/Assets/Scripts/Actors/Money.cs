@@ -24,16 +24,9 @@ namespace Game.Actor.Money
             {
                 foreach (var data in datas)
                 {
-                    var typeData = component.GetData();
-                    if (component is IComponent<MoneyData>)
-                        (component as IComponent<IData>).GetData();
-
-
-                    var dt = (component as IComponent<IData>).GetData();
-
-                    if (data.GetType() == dt)
+                    if(component.GetData(data))
                     {
-                        (component as IComponent<IData>).Setup(data);
+                        break;
                     }
                 }
 

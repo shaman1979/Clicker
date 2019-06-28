@@ -8,7 +8,7 @@ namespace Game.Components
 {
     public interface IComponent
     {
-       Type GetData();
+       bool GetData(IData data);
     }
 
     public interface IComponent<T> : IComponent where T : IData

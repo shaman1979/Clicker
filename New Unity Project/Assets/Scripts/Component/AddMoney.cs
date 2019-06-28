@@ -18,9 +18,14 @@ namespace Game.Components
             Debug.Log(data.Money.ToString());
         }
 
-        public Type GetData()
+        public bool GetData(IData data)
         {
-            return Data.GetType();
+            if(data.GetType() == typeof(MoneyData))
+            {
+                Data = data as MoneyData;
+                return true;
+            }
+            return false;
         }
 
         public void Setup(MoneyData action)
